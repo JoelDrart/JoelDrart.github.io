@@ -16,23 +16,24 @@
         
         /* Fondo de pantalla completo */
         body {
-            background-image: url('https://images3.alphacoders.com/887/thumb-1920-887499.jpg'); /* Cambia 'fondo.jpg' por el nombre de tu imagen */
+            background-image: url('https://images3.alphacoders.com/887/thumb-1920-887499.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
         }
 
         /* Caja de contenido */
         .content {
-            background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-radius: 8px;
             max-width: 600px;
             text-align: center;
+            margin: 20px;
         }
 
         h1 {
@@ -44,9 +45,36 @@
             font-size: 1.1em;
             line-height: 1.6;
         }
+
+        /* Sección para preguntas al chatbot */
+        .chatbot-tips {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .chatbot-tips h2 {
+            font-size: 1.8em;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .chatbot-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .chatbot-tips li {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
+    <!-- Chatbot Dialogflow -->
     <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
     <df-messenger
@@ -54,8 +82,7 @@
       agent-id="5d7ef484-86d6-447f-a608-99cb698e501a"
       language-code="es"
       max-query-length="-1">
-      <df-messenger-chat-bubble
-       chat-title="Metro Chatbot">
+      <df-messenger-chat-bubble chat-title="Metro Chatbot">
       </df-messenger-chat-bubble>
     </df-messenger>
     <style>
@@ -63,28 +90,42 @@
         z-index: 999;
         position: fixed;
         --df-messenger-font-color: #000;
-        --df-messenger-font-family: Google Sans;
-        --df-messenger-chat-background: #f3f6fc;
-        --df-messenger-message-user-background: #d3e3fd;
-        --df-messenger-message-bot-background: #fff;
+        --df-messenger-font-family: Arial, sans-serif;
+        --df-messenger-chat-background: #1a1a1a;
+        --df-messenger-message-user-background: #FFD700;
+        --df-messenger-message-bot-background: #333;
         bottom: 16px;
         right: 16px;
       }
     </style>
 
+    <!-- Sección de historia -->
     <div class="content">
         <h1>La Historia de Metro</h1>
         <p>
-            La serie Metro, creada por Dmitry Glukhovsky, se desarrolla en un Moscú postapocalíptico,
+            La serie *Metro*, creada por Dmitry Glukhovsky, se desarrolla en un Moscú postapocalíptico,
             donde los pocos sobrevivientes se han refugiado en el sistema de metro de la ciudad.
             Después de una devastadora guerra nuclear, Artyom y otros luchan por sobrevivir en un
-            mundo de oscuridad y peligros constantes, enfrentando tanto amenazas físicas como
-            dilemas morales.
+            mundo de oscuridad y peligros constantes, enfrentando tanto amenazas físicas como dilemas morales.
         </p>
         <p>
             Desde *Metro 2033* hasta *Metro 2035*, esta saga explora temas profundos como la
             humanidad, el miedo y la esperanza en tiempos de crisis.
         </p>
     </div>
+
+    <!-- Sección de preguntas para el chatbot -->
+    <div class="chatbot-tips">
+        <h2>Cosas que le puedes preguntar a nuestro chatbot de Metro</h2>
+        <ul>
+            <li>¿Cuál es la historia de Artyom?</li>
+            <li>¿Qué es el Metro de Moscú en el universo de Metro?</li>
+            <li>¿Qué criaturas y peligros existen en el mundo de Metro?</li>
+            <li>¿Qué simboliza el Metro en la saga?</li>
+            <li>Detalles sobre los juegos *Metro 2033*, *Metro Last Light*, y *Metro Exodus*</li>
+        </ul>
+        <p>¡Descubre más secretos del mundo de Metro preguntándole a nuestro chatbot!</p>
+    </div>
 </body>
 </html>
+
